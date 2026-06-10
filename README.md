@@ -4,152 +4,165 @@
 
 ### Identitas Mahasiswa
 
-Nama : Muhammad Junabil
+**Nama:** Muhammad Junabil
 
-NIM : C2455201027
+**NIM:** C2455201027
 
-Program Studi : Teknik Informatika
+**Program Studi:** Teknik Informatika
 
----
+**Mata Kuliah:** Metode Numerik
 
-## Deskripsi Proyek
+
+# Deskripsi Proyek
 
 Proyek ini merupakan tugas Portofolio Akhir Semester Mata Kuliah Metode Numerik.
 
-Metode yang digunakan adalah Newton-Raphson untuk mencari akar persamaan:
+Pada proyek ini digunakan Metode Newton-Raphson untuk mencari akar dari persamaan nonlinier:
 
-f(x) = x³ - 2x - 5
+f(x) = x³ − 2x − 5
 
----
+Metode Newton-Raphson dipilih karena memiliki tingkat konvergensi yang cepat dan mampu menghasilkan solusi yang akurat dengan jumlah iterasi yang relatif sedikit.
 
-## Model Matematika
 
-Fungsi:
+# Model Matematika
 
-f(x) = x³ - 2x - 5
+Fungsi yang digunakan:
 
-Turunan:
+f(x) = x³ − 2x − 5
 
-f'(x) = 3x² - 2
+Turunan fungsi:
 
----
+f'(x) = 3x² − 2
 
-## Hasil
+Tujuan perhitungan adalah mencari nilai x yang memenuhi:
 
-Akar Persamaan:
+f(x) = 0
 
-x = 2.0945514815
 
----
+# Metode Newton-Raphson
 
-## File Repository
+Rumus Newton-Raphson:
 
-- newton_raphson.py
-- hasil_program.png
-- README.md
+x(n+1) = x(n) − f(x(n)) / f'(x(n))
 
----
+Keterangan:
 
-## Kesimpulan
+* x(n) = nilai iterasi saat ini
+* x(n+1) = nilai iterasi berikutnya
+* f(x) = fungsi
+* f'(x) = turunan fungsi
 
-Metode Newton-Raphson berhasil menentukan akar persamaan nonlinier dengan tingkat akurasi yang tinggi.
+Langkah-langkah metode:
 
-## Iterasi Manual Newton-Raphson
+1. Menentukan nilai awal (x₀)
+2. Menghitung f(x)
+3. Menghitung f'(x)
+4. Menghitung nilai x baru
+5. Mengulangi proses hingga error mendekati nol
 
-Persamaan:
 
-f(x) = x³ - 2x - 5
-
-Turunan:
-
-f'(x) = 3x² - 2
+# Iterasi Manual
 
 Tebakan awal:
 
 x₀ = 2
 
-### Iterasi 1
+## Iterasi 1
 
-Hitung nilai fungsi:
+f(2) = 2³ − 2(2) − 5
 
-f(2) = 2³ - 2(2) - 5
+f(2) = 8 − 4 − 5
 
-f(2) = 8 - 4 - 5
+f(2) = −1
 
-f(2) = -1
+f'(2) = 3(2)² − 2
 
-Hitung turunan:
-
-f'(2) = 3(2)² - 2
-
-f'(2) = 12 - 2
+f'(2) = 12 − 2
 
 f'(2) = 10
 
-Gunakan rumus Newton-Raphson:
-
-x₁ = x₀ - f(x₀)/f'(x₀)
-
-x₁ = 2 - (-1/10)
+x₁ = 2 − (−1 / 10)
 
 x₁ = 2.100000
 
-### Iterasi 2
 
-Hitung nilai fungsi:
+## Iterasi 2
 
-f(2.1) = (2.1)³ - 2(2.1) - 5
+f(2.1) = (2.1)³ − 2(2.1) − 5
 
-f(2.1) = 9.261 - 4.2 - 5
+f(2.1) = 9.261 − 4.2 − 5
 
 f(2.1) = 0.061
 
-Hitung turunan:
-
-f'(2.1) = 3(2.1)² - 2
+f'(2.1) = 3(2.1)² − 2
 
 f'(2.1) = 11.23
 
-Hitung nilai berikutnya:
-
-x₂ = 2.1 - (0.061 / 11.23)
+x₂ = 2.1 − (0.061 / 11.23)
 
 x₂ = 2.094568
 
-### Iterasi 3
 
-Hitung nilai berikutnya:
+## Iterasi 3
 
 x₃ = 2.094551
 
 Karena perubahan nilai sudah sangat kecil, iterasi dihentikan.
 
-### Hasil Akhir
 
-Akar persamaan yang diperoleh:
 
-x = 2.094551
+# Hasil
 
-## Analisis Error
+Hasil perhitungan menggunakan Metode Newton-Raphson menghasilkan akar persamaan:
 
-Error relatif dihitung menggunakan:
+x = 2.0945514815
 
-Error = |(xₙ - xₙ₋₁) / xₙ| × 100%
+Nilai tersebut merupakan solusi dari persamaan:
 
-Dari hasil iterasi diperoleh nilai error yang sangat kecil dan mendekati nol.
+x³ − 2x − 5 = 0
 
-Hal ini menunjukkan bahwa metode Newton-Raphson telah mencapai konvergensi dan menghasilkan solusi yang akurat.
+Program berhasil menemukan solusi dalam beberapa iterasi dengan tingkat akurasi yang tinggi.
 
-### Kesimpulan
+
+
+# Analisis Error
+
+Rumus error relatif:
+
+Error = |(xₙ − xₙ₋₁) / xₙ| × 100%
+
+Perhitungan:
+
+Error = |(2.094551 − 2.094568) / 2.094551| × 100%
+
+Error = 0.00081%
+
+Nilai error yang sangat kecil menunjukkan bahwa metode telah mencapai konvergensi dan menghasilkan solusi yang akurat.
+
+
+
+# Kesimpulan
 
 Metode Newton-Raphson berhasil digunakan untuk menyelesaikan persamaan nonlinier:
 
-f(x) = x³ - 2x - 5
+f(x) = x³ − 2x − 5
 
 Hasil akar persamaan yang diperoleh adalah:
 
-x = 2.094551
+x = 2.0945514815
 
-Dengan error yang sangat kecil, hasil perhitungan dapat dianggap valid dan akurat.
+Dengan error sebesar 0.00081%, metode Newton-Raphson terbukti mampu memberikan hasil yang akurat dan efisien dalam menyelesaikan permasalahan pencarian akar persamaan nonlinier.
+
+
+
+# File Repository
+
+* newton_raphson.py → Source code program
+* hasil_program.png → Screenshot hasil program
+* README.md → Dokumentasi proyek
+
+
+
+Terima kasih telah mengunjungi repository ini.
 
 
